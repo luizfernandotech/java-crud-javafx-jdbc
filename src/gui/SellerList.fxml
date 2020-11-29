@@ -6,9 +6,9 @@
 <?import javafx.scene.text.Font?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
-      fx:controller="gui.DepartmentListController">
+      fx:controller="gui.SellerListController">
     <children>
-        <Label text="Department Registration">
+        <Label text="Seller Registration">
             <font>
                 <Font name="System Bold" size="14.0"/>
             </font>
@@ -18,11 +18,11 @@
                 <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" text="New"/>
             </items>
         </ToolBar>
-        <TableView fx:id="departmentTableView" prefHeight="200.0" prefWidth="200.0">
+        <TableView fx:id="SellerTableView" prefHeight="200.0" prefWidth="200.0">
             <columns>
                 <TableColumn fx:id="tableColumnId" prefWidth="60.0" text="Id"/>
                 <TableColumn fx:id="tableColumnName" prefWidth="250.0" text="Name"/>
-                <TableColumn fx:id="tableColumnEdit" prefWidth="60.0" sortable="false"/>
+                <TableColumn fx:id="tableColumnEdit" minWidth="0.0" prefWidth="60.0" sortable="false"/>
                 <TableColumn fx:id="tableColumnDelete" prefWidth="70.0"/>
             </columns>
         </TableView>
