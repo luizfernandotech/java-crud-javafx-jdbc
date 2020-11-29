@@ -79,7 +79,7 @@ public class SellerListController implements Initializable, DataChangeListener {
         System.out.println("onBtDeleteAction");
     }
 
-    public void setSellerService(SellerService service) {
+    public void setService(SellerService service) {
         this.service = service;
     }
 
@@ -189,7 +189,9 @@ public class SellerListController implements Initializable, DataChangeListener {
     }
 
     private void removeEntity(Seller obj) {
+
         Optional<ButtonType> result = Alerts.showConfirmation("Confirmation", "Are you sure to delete?");
+
         if (result.get() == ButtonType.OK) {
             if (service == null) {
                 throw new IllegalStateException("Service was null");

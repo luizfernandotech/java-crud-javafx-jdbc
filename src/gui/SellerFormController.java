@@ -27,7 +27,7 @@ public class SellerFormController implements Initializable {
 
     private Seller entity;
 
-    private SellerService service;
+    private SellerService sellerService;
 
     private DepartmentService departmentService;
 
@@ -75,8 +75,8 @@ public class SellerFormController implements Initializable {
         this.entity = entity;
     }
 
-    public void setSellerServices(SellerService service, DepartmentService departmentService) {
-        this.service = service;
+    public void setSellerServices(SellerService sellerService, DepartmentService departmentService) {
+        this.sellerService = sellerService;
         this.departmentService = departmentService;
     }
 
@@ -89,12 +89,12 @@ public class SellerFormController implements Initializable {
         if (entity == null) {
             throw new IllegalStateException("Entity was null");
         }
-        if (service == null) {
+        if (sellerService == null) {
             throw new IllegalStateException("Service was null");
         }
         try {
             entity = getFormData();
-            service.saveOrUpdate(entity);
+            sellerService.saveOrUpdate(entity);
             notifyDataChangeListeners();
             Utils.currentStage(event).close();
         } catch (ValidationException e) {

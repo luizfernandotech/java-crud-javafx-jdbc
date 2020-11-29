@@ -68,7 +68,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
 
     private ObservableList<Department> observableList;
 
-    public void setDepartmentService(DepartmentService service) {
+    public void setService(DepartmentService service) {
         this.service = service;
     }
 
@@ -172,7 +172,9 @@ public class DepartmentListController implements Initializable, DataChangeListen
     }
 
     private void removeEntity(Department obj) {
+
         Optional<ButtonType> result = Alerts.showConfirmation("Confirmation", "Are you sure to delete?");
+
         if (result.get() == ButtonType.OK) {
             if (service == null) {
                 throw new IllegalStateException("Service was null");
