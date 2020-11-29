@@ -36,11 +36,7 @@ public class Utils {
                 @Override
                 protected void updateItem(Date item, boolean empty) {
                     super.updateItem(item, empty);
-                    if (empty) {
-                        setText(null);
-                    } else {
-                        setText(sdf.format(item));
-                    }
+                    setText(empty ? null : sdf.format(item));
                 }
             };
             return cell;
@@ -54,12 +50,8 @@ public class Utils {
                 @Override
                 protected void updateItem(Double item, boolean empty) {
                     super.updateItem(item, empty);
-                    if (empty) {
-                        setText(null);
-                    } else {
-                        Locale.setDefault(Locale.US);
-                        setText(String.format("%." + decimalPlaces + "f", item));
-                    }
+                    Locale.setDefault(Locale.US);
+                    setText(empty ? null : String.format("%." + decimalPlaces + "f", item));
                 }
             };
             return cell;
@@ -77,20 +69,12 @@ public class Utils {
 
             @Override
             public String toString(LocalDate date) {
-                if (date != null) {
-                    return dateTimeFormatter.format(date);
-                } else {
-                    return "";
-                }
+                return (date != null) ? dateTimeFormatter.format(date) : "";
             }
 
             @Override
             public LocalDate fromString(String string) {
-                if (string != null && !string.isEmpty()) {
-                    return LocalDate.parse(string, dateTimeFormatter);
-                } else {
-                    return null;
-                }
+                return (string != null && !string.isEmpty()) ? LocalDate.parse(string, dateTimeFormatter) : null;
             }
         });
     }
