@@ -21,7 +21,10 @@
         <TableView fx:id="SellerTableView" prefHeight="200.0" prefWidth="200.0">
             <columns>
                 <TableColumn fx:id="tableColumnId" prefWidth="60.0" text="Id"/>
-                <TableColumn fx:id="tableColumnName" prefWidth="250.0" text="Name"/>
+                <TableColumn fx:id="tableColumnName" prefWidth="120.0" text="Name"/>
+                <TableColumn fx:id="tableColumnEmail" prefWidth="150.0" text="Email"/>
+                <TableColumn fx:id="tableColumnBirthDate" text="Brith Date"/>
+                <TableColumn fx:id="tableColumnBaseSalary" prefWidth="75.0" text="Base Salary"/>
                 <TableColumn fx:id="tableColumnEdit" minWidth="0.0" prefWidth="60.0" sortable="false"/>
                 <TableColumn fx:id="tableColumnDelete" prefWidth="70.0"/>
             </columns>
