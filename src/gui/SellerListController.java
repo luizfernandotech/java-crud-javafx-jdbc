@@ -32,6 +32,8 @@ public class SellerListController implements Initializable, DataChangeListener {
 
     private SellerService service;
 
+    private ObservableList<Seller> observableList;
+
     @FXML
     private TableView<Seller> SellerTableView;
 
@@ -58,7 +60,6 @@ public class SellerListController implements Initializable, DataChangeListener {
 
     @FXML
     private Button btNew;
-    private ObservableList<Seller> observableList;
 
     @FXML
     public void onBtNewAction(ActionEvent event) {

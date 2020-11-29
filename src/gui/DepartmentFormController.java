@@ -28,9 +28,11 @@ public class DepartmentFormController implements Initializable {
     private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
 
     @FXML
-    TextField txtName;
-    @FXML
     private TextField txtId;
+
+    @FXML
+    private TextField txtName;
+
     @FXML
     private Label labelErrorName;
 
@@ -72,6 +74,11 @@ public class DepartmentFormController implements Initializable {
         }
     }
 
+    @FXML
+    public void onBtCancelAction(ActionEvent event) {
+        Utils.currentStage(event).close();
+    }
+
     private void notifyDataChangeListeners() {
         for (DataChangeListener listener : dataChangeListeners) {
             listener.onDataChanged();
@@ -95,11 +102,6 @@ public class DepartmentFormController implements Initializable {
         }
 
         return obj;
-    }
-
-    @FXML
-    public void onBtCancelAction(ActionEvent event) {
-        Utils.currentStage(event).close();
     }
 
     @Override
